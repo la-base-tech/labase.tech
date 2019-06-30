@@ -1,21 +1,43 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import NavBar from '../components/NavBar';
+import HeaderSection from '../components/sections/HeaderSection';
+import MissionSection from '../components/sections/MissionSection';
+import ActionsSection from '../components/sections/ActionsSection';
+import OfferSection from '../components/sections/OfferSection';
+import CommunitySection from '../components/sections/CommunitySection';
+import Footer from '../components/Footer';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`;
 
-export default IndexPage
+const IndexPage = ({ data }) => (
+  <>
+    <Helmet>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+    </Helmet>
+
+    <NavBar />
+
+    <HeaderSection />
+    <MissionSection />
+    <ActionsSection />
+    <OfferSection />
+    <CommunitySection />
+
+    <Footer />
+  </>
+);
+
+export default IndexPage;

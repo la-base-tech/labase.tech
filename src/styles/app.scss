@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@import "./variables.scss";
+@import "~bulma/bulma.sass";
+
+// Adjust navbar size for wide screens
+@media (min-width: 768px) {
+  body.has-navbar-fixed-top {
+    padding-top: $navbar-height-big;
+  }
+
+  .hero.is-fullheight-with-navbar {
+    min-height: calc(100vh - #{$navbar-height-big});
+  }
+
+  .navbar {
+    min-height: $navbar-height-big;
+  }
+
+  .navbar-brand {
+    min-height: $navbar-height-big;
+  }
+}
+
+.section {
+  padding: 30px;
+}
+
+.section-even {
+  background: #fbeffc;
+}
+
+h1.section-title {
+  text-transform: uppercase;
+  color: #c3b8da;
+  font-size: 1.7rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2.section-subtitle {
+  font-weight: bold;
+  font-size: 20px;
+}
