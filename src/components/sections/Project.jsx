@@ -47,19 +47,17 @@ const ButtonSecondaryStyled = styled(ButtonSecondary)`
   margin-top: 20px;
 `;
 
-const Project = ({ types, data }) => {
-  const type = types[data.type];
-
+const Project = ({ type, image, title, description, link }) => {
   return (
     <Container>
-      <img src={data.image} alt={data.title} />
+      <img src={image} alt={title} />
       <ContentWrapper>
-        <Title>{data.title}</Title>
+        <Title>{title}</Title>
         <Type>{type}</Type>
-        <Description dangerouslySetInnerHTML={{ __html: data.description }} />
+        <Description dangerouslySetInnerHTML={{ __html: description }} />
 
-        <ButtonSecondaryStyled href={data.link} color="#2f1661">
-          > Voir le projet
+        <ButtonSecondaryStyled href={link} color="#2f1661">
+          &gt; Voir le projet
         </ButtonSecondaryStyled>
       </ContentWrapper>
     </Container>
@@ -67,8 +65,11 @@ const Project = ({ types, data }) => {
 };
 
 Project.propTypes = {
-  types: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Project;

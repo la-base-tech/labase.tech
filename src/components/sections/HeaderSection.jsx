@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import GatsbyBackgroundImage from 'gatsby-background-image';
@@ -25,7 +26,7 @@ const BackgroundImage = ({ className, children }) => (
           Tag="section"
           className={className}
           fluid={imageData}
-          backgroundColor={`#040e18`}
+          backgroundColor="#040e18"
         >
           {children}
         </GatsbyBackgroundImage>
@@ -33,6 +34,11 @@ const BackgroundImage = ({ className, children }) => (
     }}
   />
 );
+
+BackgroundImage.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100%;
@@ -88,10 +94,10 @@ const HeaderSection = () => (
           </div>
           <div className="column">
             <ButtonSecondary href="#section-community" color="#FFFFFF">
-              > Rejoindre la communauté
+              &gt; Rejoindre la communauté
             </ButtonSecondary>
           </div>
-          <div className="column"></div>
+          <div className="column" />
         </div>
       </div>
     </div>

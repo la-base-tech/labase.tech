@@ -114,7 +114,7 @@ const OfferSection = () => (
             le climat au travers d’un abonnement mensuel.
             <br />
             <br />
-            Nous couvrons les champs d'expertises suivantes :
+            Nous couvrons les champs d&apos;expertises suivantes :
           </p>
 
           <ul>

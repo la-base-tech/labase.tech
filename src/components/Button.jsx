@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ButtonPrimaryStyled = styled.a`
@@ -12,7 +13,7 @@ const ButtonPrimaryStyled = styled.a`
 
 const ButtonPrimary = ({ className, children, href }) => {
   const opts = {
-    className: className + ' button is-primary',
+    className: `${className} button is-primary`,
     href,
   };
 
@@ -22,6 +23,12 @@ const ButtonPrimary = ({ className, children, href }) => {
   }
 
   return <ButtonPrimaryStyled {...opts}>{children}</ButtonPrimaryStyled>;
+};
+
+ButtonPrimary.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 const ButtonSecondaryStyled = styled.a`
@@ -39,7 +46,7 @@ const ButtonSecondaryStyled = styled.a`
 
 const ButtonSecondary = ({ className, children, color, href }) => {
   const opts = {
-    className: className + ' button',
+    className: `${className} button`,
     href,
     color,
   };
@@ -50,6 +57,13 @@ const ButtonSecondary = ({ className, children, color, href }) => {
   }
 
   return <ButtonSecondaryStyled {...opts}>{children}</ButtonSecondaryStyled>;
+};
+
+ButtonSecondary.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export { ButtonPrimary, ButtonSecondary };

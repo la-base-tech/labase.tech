@@ -16,7 +16,7 @@ const NavBar = () => (
     <div
       className="navbar-brand"
       style={{
-        fontSize: 1.5 + 'em',
+        fontSize: `${1.5}em`,
       }}
     >
       <Logo className="navbar-item" fontSize="1.5" />

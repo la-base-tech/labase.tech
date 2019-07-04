@@ -34,7 +34,7 @@ const CommunitySection = () => (
         <span className="is-hidden-mobile">
           Développement Web, Product Manager, Designer UX & UI, Marketing
           Digital, toutes les expertises peuvent être mises à profit. Et en
-          rejoignant la base tech, vous accédez à :  
+          rejoignant la base tech, vous accédez à :
         </span>
         <br />
         <br />
@@ -54,7 +54,7 @@ const CommunitySection = () => (
       <ButtonPrimary>Nous rejoindre</ButtonPrimary>
 
       <ButtonProjects color="#000000">
-        > Découvrir les projets en cours
+        &gt; Découvrir les projets en cours
       </ButtonProjects>
     </div>
   </section>

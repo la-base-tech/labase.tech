@@ -1,9 +1,9 @@
-import "./src/styles/app.scss"
+import './src/styles/app.scss';
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
-    import(`intersection-observer`)
-    console.log(`# IntersectionObserver is polyfilled!`)
+    import(`intersection-observer`);
+    // console.log(`# IntersectionObserver is polyfilled!`);
   }
-}
+};

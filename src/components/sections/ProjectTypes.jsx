@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const ProjetTypeWrapper = styled.div`
   width: 50%;
@@ -64,22 +64,34 @@ const ProjectType = ({ children, isActive, handleClick }) => {
   );
 };
 
+ProjectType.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
 const ProjectTypes = ({ className, types, onClickType, activeType }) => (
   <div className={className}>
-    {Object.keys(types).map(key => (
+    {types.map(({ key, title }) => (
       <ProjectType
         isActive={key === activeType}
         key={key}
         handleClick={() => onClickType(key)}
       >
-        {types[key]}
+        {title}
       </ProjectType>
     ))}
   </div>
 );
 
 ProjectTypes.propTypes = {
-  types: PropTypes.object.isRequired,
+  className: PropTypes.string.isRequired,
+  types: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      title: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   onClickType: PropTypes.func.isRequired,
   activeType: PropTypes.string.isRequired,
 };

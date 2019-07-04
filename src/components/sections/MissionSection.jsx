@@ -54,24 +54,26 @@ const Text = styled.p`
 
 const initialType = Object.keys(projectTypes)[0];
 
+function getProject(key) {
+  return projects.find(({ type }) => type === key);
+}
+
 class MissionSection extends React.Component {
   state = {
     type: initialType,
-    project: this.getProject(initialType),
+    project: getProject(initialType),
   };
-
-  getProject(key) {
-    return projects.find(({ type }) => type === key);
-  }
 
   updateType = key => {
     this.setState({
       type: key,
-      project: this.getProject(key),
+      project: getProject(key),
     });
   };
 
   render() {
+    const { type, project } = this.state;
+
     return (
       <section id="section-mission" className="section">
         <div className="container">
@@ -95,13 +97,23 @@ class MissionSection extends React.Component {
               <Text>Les projets accompagnés oeuvrent exclusivement pour :</Text>
 
               <ProjectTypes
-                types={projectTypes}
+                types={Object.keys(projectTypes).map(key => {
+                  return {
+                    key,
+                    title: projectTypes[key],
+                  };
+                })}
                 onClickType={this.updateType}
-                activeType={this.state.type}
+                activeType={type}
               />
             </div>
             <div className="column">
-              <Project types={projectTypes} data={this.state.project} />
+              <Project
+                type={projectTypes[project.type]}
+                image={project.image}
+                description={project.description}
+                link={project.link}
+              />
             </div>
           </div>
         </div>

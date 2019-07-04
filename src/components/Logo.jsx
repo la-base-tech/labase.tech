@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import logoImage from '../images/logo.png';
 
@@ -18,6 +19,10 @@ const Logo = ({ className }) => {
       <span>.tech</span>
     </LogoStyled>
   );
+};
+
+Logo.propTypes = {
+  className: PropTypes.string.isRequired,
 };
 
 export default Logo;
