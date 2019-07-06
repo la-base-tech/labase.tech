@@ -89,7 +89,7 @@ ProjectTypes.propTypes = {
   types: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,
-      title: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
     })
   ).isRequired,
   onClickType: PropTypes.func.isRequired,

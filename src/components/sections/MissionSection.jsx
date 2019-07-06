@@ -111,6 +111,7 @@ class MissionSection extends React.Component {
               <Project
                 type={projectTypes[project.type]}
                 image={project.image}
+                title={project.title}
                 description={project.description}
                 link={project.link}
               />

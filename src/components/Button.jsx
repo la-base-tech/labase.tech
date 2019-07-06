@@ -26,9 +26,14 @@ const ButtonPrimary = ({ className, children, href }) => {
 };
 
 ButtonPrimary.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
+};
+
+ButtonPrimary.defaultProps = {
+  className: '',
+  href: null,
 };
 
 const ButtonSecondaryStyled = styled.a`
@@ -60,10 +65,15 @@ const ButtonSecondary = ({ className, children, color, href }) => {
 };
 
 ButtonSecondary.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   color: PropTypes.string.isRequired,
+};
+
+ButtonSecondary.defaultProps = {
+  className: '',
+  href: null,
 };
 
 export { ButtonPrimary, ButtonSecondary };
