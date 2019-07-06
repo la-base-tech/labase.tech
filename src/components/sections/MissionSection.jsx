@@ -1,4 +1,7 @@
 import React from 'react';
+import Section from './Section';
+import SectionTitle from './SectionTitle';
+import SectionSubTitle from './SectionSubTitle';
 import ProjectTypes from './ProjectTypes';
 import Project from './Project';
 
@@ -70,18 +73,18 @@ class MissionSection extends React.Component {
     const { type, project } = this.state;
 
     return (
-      <section id="section-mission" className="section">
+      <Section id="section-mission">
         <div className="container">
           <div className="columns">
             <div className="column is-two-thirds">
-              <h1 className="title section-title has-text-centered-mobile">
+              <SectionTitle className="title has-text-centered-mobile">
                 <span className="is-hidden-mobile">Notre mission</span>
                 <span className="is-hidden-tablet">Mission</span>
-              </h1>
+              </SectionTitle>
 
-              <h2 className="section-subtitle has-text-centered-mobile  ">
+              <SectionSubTitle className="has-text-centered-mobile">
                 Accélérer les projets qui répondent à l’urgence climatique
-              </h2>
+              </SectionSubTitle>
 
               <p className="is-hidden-mobile" style={{ margin: '10px 0' }}>
                 Nous dédions énergie et expertise numérique aux projets qui
@@ -115,7 +118,7 @@ class MissionSection extends React.Component {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     );
   }
 }

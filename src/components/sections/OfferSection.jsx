@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import Section from './Section';
+import SectionTitle from './SectionTitle';
+import SectionSubTitle from './SectionSubTitle';
 import { ButtonPrimary } from '../Button';
 
-const Title = styled.h1`
+const SectionTitleCustom = styled(SectionTitle)`
   margin-bottom: 30px !important;
 `;
 
-const SubTitle = styled.h2`
+const SectionSubTitleCustom = styled(SectionSubTitle)`
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 30px;
@@ -62,16 +65,16 @@ const SkillsColumn = styled.div`
 `;
 
 const OfferSection = () => (
-  <section id="section-offer" className="section">
+  <Section id="section-offer">
     <div className="container">
-      <Title className="title section-title has-text-centered-mobile">
+      <SectionTitleCustom className="title section-title has-text-centered-mobile">
         <span className="is-hidden-mobile">Notre offre</span>
         <span className="is-hidden-tablet">Offre</span>
-      </Title>
+      </SectionTitleCustom>
 
       <div className="columns">
         <OfferColumn className="column">
-          <SubTitle>Pour chaque projet</SubTitle>
+          <SectionSubTitleCustom>Pour chaque projet</SectionSubTitleCustom>
 
           <ul className="is-hidden-mobile">
             <li>
@@ -129,7 +132,7 @@ const OfferSection = () => (
         </SkillsColumn>
       </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default OfferSection;

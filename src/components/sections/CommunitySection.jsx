@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Section from './Section';
+import SectionTitle from './SectionTitle';
 import { ButtonPrimary, ButtonSecondary } from '../Button';
 
 const SectionContent = styled.div`
@@ -17,12 +19,12 @@ const ButtonProjects = styled.div`
 `;
 
 const CommunitySection = () => (
-  <section id="section-community" className="section section-even">
+  <Section id="section-community" even>
     <div className="container">
-      <h1 className="title section-title has-text-centered-mobile">
+      <SectionTitle className="title has-text-centered-mobile">
         <span className="is-hidden-mobile">La communauté</span>
         <span className="is-hidden-tablet">Communauté</span>
-      </h1>
+      </SectionTitle>
 
       <h2 className="section-subtitle has-text-centered-mobile">
         Contribuez vous aussi à la transition
@@ -60,7 +62,7 @@ const CommunitySection = () => (
         </ButtonSecondary>
       </ButtonProjects>
     </div>
-  </section>
+  </Section>
 );
 
 export default CommunitySection;

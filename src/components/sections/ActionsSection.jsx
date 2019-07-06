@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Section from './Section';
+import SectionTitle from './SectionTitle';
 
 const ColumnTitle = styled.h2`
   margin-bottom: 30px;
@@ -8,12 +10,12 @@ const ColumnTitle = styled.h2`
 `;
 
 const ActionsSection = () => (
-  <section id="section-actions" className="section section-even">
+  <Section id="section-actions" even>
     <div className="container">
-      <h1 className="title section-title has-text-centered-mobile">
+      <SectionTitle className="title has-text-centered-mobile">
         <span className="is-hidden-mobile">Nos actions</span>
         <span className="is-hidden-tablet">Actions</span>
-      </h1>
+      </SectionTitle>
       <div className="columns has-text-centered-mobile">
         <div className="column">
           <ColumnTitle>Accompagnement</ColumnTitle>
@@ -41,7 +43,7 @@ const ActionsSection = () => (
         </div>
       </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default ActionsSection;
