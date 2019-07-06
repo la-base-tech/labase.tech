@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ProjetTypeWrapper = styled.div`
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Wrapper = styled.div`
   width: 50%;
   display: flex;
   padding: 5px 0;
@@ -15,7 +20,7 @@ const ProjetTypeWrapper = styled.div`
   }
 `;
 
-const ProjetTypeBorder = styled.div`
+const Border = styled.div`
   display: flex;
   flex: 0 0 10px; /* can't grow, can't shrink, fixed at 10px */
   height: 50px;
@@ -23,8 +28,8 @@ const ProjetTypeBorder = styled.div`
   border-radius: 3px;
   transition: background 0.2s ease;
 
-  ${ProjetTypeWrapper}:hover &,
-  ${ProjetTypeWrapper}.is-active & {
+  ${Wrapper}:hover &,
+  ${Wrapper}.is-active & {
     background: #2f1661;
   }
 
@@ -33,14 +38,14 @@ const ProjetTypeBorder = styled.div`
   }
 `;
 
-const ProjetTypeLabel = styled.div`
+const Label = styled.div`
   display: flex;
   font-size: 12px;
   padding-left: 10px;
   font-weight: 600;
 
-  ${ProjetTypeWrapper}:hover &,
-  ${ProjetTypeWrapper}.is-active & {
+  ${Wrapper}:hover &,
+  ${Wrapper}.is-active & {
     color: #2f1661;
   }
 
@@ -57,10 +62,10 @@ const ProjectType = ({ children, isActive, handleClick }) => {
   }
 
   return (
-    <ProjetTypeWrapper className={className} onClick={handleClick}>
-      <ProjetTypeBorder />
-      <ProjetTypeLabel>{children}</ProjetTypeLabel>
-    </ProjetTypeWrapper>
+    <Wrapper className={className} onClick={handleClick}>
+      <Border />
+      <Label>{children}</Label>
+    </Wrapper>
   );
 };
 
@@ -71,7 +76,7 @@ ProjectType.propTypes = {
 };
 
 const ProjectTypes = ({ className, types, onClickType, activeType }) => (
-  <div className={className}>
+  <Container className={className}>
     {types.map(({ key, title }) => (
       <ProjectType
         isActive={key === activeType}
@@ -81,7 +86,7 @@ const ProjectTypes = ({ className, types, onClickType, activeType }) => (
         {title}
       </ProjectType>
     ))}
-  </div>
+  </Container>
 );
 
 ProjectTypes.propTypes = {
@@ -96,9 +101,4 @@ ProjectTypes.propTypes = {
   activeType: PropTypes.string.isRequired,
 };
 
-const StyledProjectTypes = styled(ProjectTypes)`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-export default StyledProjectTypes;
+export default ProjectTypes;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SubTitle = styled.h2`
+const ColumnTitle = styled.h2`
   margin-bottom: 30px;
   font-size: 25px;
   font-weight: 600;
@@ -16,7 +16,7 @@ const ActionsSection = () => (
       </h1>
       <div className="columns has-text-centered-mobile">
         <div className="column">
-          <SubTitle>Accompagnement</SubTitle>
+          <ColumnTitle>Accompagnement</ColumnTitle>
 
           <p>
             Nous <b>accompagnons</b> les acteurs engagés pour la transition sur
@@ -24,7 +24,7 @@ const ActionsSection = () => (
           </p>
         </div>
         <div className="column">
-          <SubTitle>Communauté</SubTitle>
+          <ColumnTitle>Communauté</ColumnTitle>
 
           <p>
             Nous <b>fédérons</b> les tech’ qui souhaitent s’engager et leur
@@ -32,7 +32,7 @@ const ActionsSection = () => (
           </p>
         </div>
         <div className="column">
-          <SubTitle>Incubation</SubTitle>
+          <ColumnTitle>Incubation</ColumnTitle>
 
           <p>
             Nous <b>faisons</b> émerger des projets qui répondent à la crise

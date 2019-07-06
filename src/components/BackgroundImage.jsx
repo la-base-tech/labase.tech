@@ -11,7 +11,13 @@ const StyledBackgroundImage = styled.div`
   background-size: cover;
 `;
 
-const BackgroundImage = ({ className, children, query }) => (
+const BackgroundImage = ({
+  className,
+  children,
+  query,
+  tag,
+  backgroundColor,
+}) => (
   <StyledBackgroundImage>
     <StaticQuery
       query={query}
@@ -20,10 +26,10 @@ const BackgroundImage = ({ className, children, query }) => (
         const imageData = data.desktop.childImageSharp.fluid;
         return (
           <GatsbyBackgroundImage
-            Tag="section"
+            Tag={tag}
             className={className}
             fluid={imageData}
-            backgroundColor="#040e18"
+            backgroundColor={backgroundColor}
           >
             {children}
           </GatsbyBackgroundImage>
@@ -34,6 +40,8 @@ const BackgroundImage = ({ className, children, query }) => (
 );
 
 BackgroundImage.propTypes = {
+  tag: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   query: PropTypes.string.isRequired,

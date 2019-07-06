@@ -43,7 +43,7 @@ const Description = styled.p`
   cursor: default;
 `;
 
-const ButtonSecondaryStyled = styled(ButtonSecondary)`
+const ButtonWrapper = styled.div`
   margin-top: 20px;
 `;
 
@@ -56,9 +56,11 @@ const Project = ({ type, image, title, description, link }) => {
         <Type>{type}</Type>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
 
-        <ButtonSecondaryStyled href={link} color="#2f1661">
-          &gt; Voir le projet
-        </ButtonSecondaryStyled>
+        <ButtonWrapper>
+          <ButtonSecondary href={link} color="#2f1661">
+            &gt; Voir le projet
+          </ButtonSecondary>
+        </ButtonWrapper>
       </ContentWrapper>
     </Container>
   );

@@ -6,13 +6,13 @@ const Title = styled.h1`
   margin-bottom: 30px !important;
 `;
 
-const ColumnTitle = styled.h2`
+const SubTitle = styled.h2`
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 30px;
 `;
 
-const OfferWrapper = styled.div`
+const OfferColumn = styled.div`
   padding: 30px;
   background: #fbeffc;
   color: #2f1661;
@@ -20,22 +20,22 @@ const OfferWrapper = styled.div`
   ul {
     margin-bottom: 30px;
   }
+`;
 
-  .price {
-    display: inline-block;
-    border-top: 5px solid #2f1661;
-    padding-top: 30px;
-    font-weight: 600;
-    font-size: 0.9em;
+const OfferPrice = styled.div`
+  display: inline-block;
+  border-top: 5px solid #2f1661;
+  padding-top: 30px;
+  font-weight: 600;
+  font-size: 0.9em;
 
-    @media (min-width: 768px) {
-      padding: 30px 50px 0 0;
-      font-size: 1em;
-    }
+  @media (min-width: 768px) {
+    padding: 30px 50px 0 0;
+    font-size: 1em;
   }
 `;
 
-const SkillsWrapper = styled.div`
+const SkillsColumn = styled.div`
   padding: 30px;
 
   ul {
@@ -70,8 +70,8 @@ const OfferSection = () => (
       </Title>
 
       <div className="columns">
-        <OfferWrapper className="column">
-          <ColumnTitle>Pour chaque projet</ColumnTitle>
+        <OfferColumn className="column">
+          <SubTitle>Pour chaque projet</SubTitle>
 
           <ul className="is-hidden-mobile">
             <li>
@@ -104,10 +104,10 @@ const OfferSection = () => (
             </li>
           </ul>
 
-          <div className="price">à partir de 2,000€ HT/mois</div>
-        </OfferWrapper>
-        <SkillsWrapper className="column">
-          <ColumnTitle>Accompagnement</ColumnTitle>
+          <OfferPrice>à partir de 2,000€ HT/mois</OfferPrice>
+        </OfferColumn>
+        <SkillsColumn className="column">
+          <h2>Accompagnement</h2>
 
           <p>
             Nous couvrons <b>les besoins numériques</b> des acteurs engagés pour
@@ -126,7 +126,7 @@ const OfferSection = () => (
           </ul>
 
           <ButtonPrimary>Nous contacter</ButtonPrimary>
-        </SkillsWrapper>
+        </SkillsColumn>
       </div>
     </div>
   </section>

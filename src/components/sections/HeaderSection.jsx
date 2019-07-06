@@ -25,8 +25,10 @@ const SubTitle = styled.h2`
 
 const HeaderSection = () => (
   <BackgroundImage
+    tag="section"
     id="section-header"
     className="hero is-fullheight-with-navbar"
+    backgroundColor="#FFFFFF"
     query={graphql`
       query {
         desktop: file(relativePath: { eq: "header-background.png" }) {

@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { ButtonPrimary, ButtonSecondary } from '../Button';
 
-const Content = styled.p`
+const SectionContent = styled.div`
   margin: 20px 0;
 `;
 
-const ButtonProjects = styled(ButtonSecondary)`
+const ButtonProjects = styled.div`
+  display: inline-block;
   margin-top: 20px;
 
   @media (min-width: 768px) {
@@ -27,7 +28,7 @@ const CommunitySection = () => (
         Contribuez vous aussi à la transition
       </h2>
 
-      <Content>
+      <SectionContent>
         <span className="is-hidden-tablet">
           Rejoindre la communauté <b>la base tech</b>, c’est :
         </span>
@@ -49,12 +50,14 @@ const CommunitySection = () => (
         <br />
         <br />
         Une <b>mise en contact</b> avec des dizaines de tech’ engagés
-      </Content>
+      </SectionContent>
 
       <ButtonPrimary>Nous rejoindre</ButtonPrimary>
 
-      <ButtonProjects color="#000000">
-        &gt; Découvrir les projets en cours
+      <ButtonProjects>
+        <ButtonSecondary color="#000000">
+          &gt; Découvrir les projets en cours
+        </ButtonSecondary>
       </ButtonProjects>
     </div>
   </section>

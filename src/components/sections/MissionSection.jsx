@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import ProjectTypes from './ProjectTypes';
 import Project from './Project';
 
@@ -48,10 +47,6 @@ const projects = [
   },
 ];
 
-const Text = styled.p`
-  margin: 10px 0;
-`;
-
 const initialType = Object.keys(projectTypes)[0];
 
 function getProject(key) {
@@ -88,13 +83,15 @@ class MissionSection extends React.Component {
                 Accélérer les projets qui répondent à l’urgence climatique
               </h2>
 
-              <Text className="is-hidden-mobile">
+              <p className="is-hidden-mobile" style={{ margin: '10px 0' }}>
                 Nous dédions énergie et expertise numérique aux projets qui
                 apportent des réponses à la crise climatique et aux
                 répercussions sociales qu’elle entraine.
-              </Text>
+              </p>
 
-              <Text>Les projets accompagnés oeuvrent exclusivement pour :</Text>
+              <p style={{ margin: '10px 0' }}>
+                Les projets accompagnés oeuvrent exclusivement pour :
+              </p>
 
               <ProjectTypes
                 types={Object.keys(projectTypes).map(key => {
