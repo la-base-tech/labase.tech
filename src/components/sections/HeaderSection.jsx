@@ -1,53 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import GatsbyBackgroundImage from 'gatsby-background-image';
 import { ButtonPrimary, ButtonSecondary } from '../Button';
-
-const BackgroundImage = ({ className, children }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "header-background.png" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      // Set ImageData.
-      const imageData = data.desktop.childImageSharp.fluid;
-      return (
-        <GatsbyBackgroundImage
-          Tag="section"
-          className={className}
-          fluid={imageData}
-          backgroundColor="#040e18"
-        >
-          {children}
-        </GatsbyBackgroundImage>
-      );
-    }}
-  />
-);
-
-BackgroundImage.propTypes = {
-  className: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-};
-
-const StyledBackgroundImage = styled(BackgroundImage)`
-  width: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
+import BackgroundImage from '../BackgroundImage';
 
 const Title = styled.h1`
+  color: #fff;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -59,15 +17,27 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
+  color: #fff;
   margin-bottom: 40px;
   font-size: 25px;
   font-weight: 600;
 `;
 
 const HeaderSection = () => (
-  <StyledBackgroundImage
+  <BackgroundImage
     id="section-header"
-    className="hero is-link is-fullheight-with-navbar"
+    className="hero is-fullheight-with-navbar"
+    query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "header-background.png" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
   >
     <div className="hero-body">
       <div className="container">
@@ -101,7 +71,7 @@ const HeaderSection = () => (
         </div>
       </div>
     </div>
-  </StyledBackgroundImage>
+  </BackgroundImage>
 );
 
 export default HeaderSection;
