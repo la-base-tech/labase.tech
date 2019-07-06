@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx}": [
+    "yarn run lint",
+    "git add"
+  ]
+}
