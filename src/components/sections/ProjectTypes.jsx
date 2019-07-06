@@ -90,7 +90,7 @@ const ProjectTypes = ({ className, types, onClickType, activeType }) => (
 );
 
 ProjectTypes.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   types: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,
@@ -99,6 +99,10 @@ ProjectTypes.propTypes = {
   ).isRequired,
   onClickType: PropTypes.func.isRequired,
   activeType: PropTypes.string.isRequired,
+};
+
+ProjectTypes.defaultProps = {
+  className: '',
 };
 
 export default ProjectTypes;
