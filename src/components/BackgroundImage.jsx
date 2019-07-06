@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery } from 'gatsby';
 import GatsbyBackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 
@@ -14,28 +13,19 @@ const StyledBackgroundImage = styled.div`
 const BackgroundImage = ({
   className,
   children,
-  query,
+  imageData,
   tag,
   backgroundColor,
 }) => (
   <StyledBackgroundImage>
-    <StaticQuery
-      query={query}
-      render={data => {
-        // Set ImageData.
-        const imageData = data.desktop.childImageSharp.fluid;
-        return (
-          <GatsbyBackgroundImage
-            Tag={tag}
-            className={className}
-            fluid={imageData}
-            backgroundColor={backgroundColor}
-          >
-            {children}
-          </GatsbyBackgroundImage>
-        );
-      }}
-    />
+    <GatsbyBackgroundImage
+      Tag={tag}
+      className={className}
+      fluid={imageData}
+      backgroundColor={backgroundColor}
+    >
+      {children}
+    </GatsbyBackgroundImage>
   </StyledBackgroundImage>
 );
 
@@ -44,7 +34,15 @@ BackgroundImage.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  query: PropTypes.string.isRequired,
+  imageData: PropTypes.shape({
+    aspectRatio: PropTypes.number.isRequired,
+    base64: PropTypes.string.isRequired,
+    sizes: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    srcSet: PropTypes.string.isRequired,
+    srcSetWebp: PropTypes.string.isRequired,
+    srcWebp: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BackgroundImage;

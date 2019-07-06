@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { ButtonPrimary, ButtonSecondary } from '../Button';
 import BackgroundImage from '../BackgroundImage';
@@ -24,11 +24,7 @@ const SubTitle = styled.h2`
 `;
 
 const HeaderSection = () => (
-  <BackgroundImage
-    tag="section"
-    id="section-header"
-    className="hero is-fullheight-with-navbar"
-    backgroundColor="#FFFFFF"
+  <StaticQuery
     query={graphql`
       query {
         desktop: file(relativePath: { eq: "header-background.png" }) {
@@ -40,40 +36,52 @@ const HeaderSection = () => (
         }
       }
     `}
-  >
-    <div className="hero-body">
-      <div className="container">
-        <Title>
-          <span className="is-hidden-mobile">
-            Le point de départ de vos projets pour un espoir climatique
-          </span>
-          <span className="is-hidden-tablet">
-            Au départ de vos projets pour un espoir climatique
-          </span>
-        </Title>
+    render={data => {
+      const imageData = data.desktop.childImageSharp.fluid;
+      return (
+        <BackgroundImage
+          tag="section"
+          id="section-header"
+          className="hero is-fullheight-with-navbar"
+          backgroundColor="#FFFFFF"
+          imageData={imageData}
+        >
+          <div className="hero-body">
+            <div className="container">
+              <Title>
+                <span className="is-hidden-mobile">
+                  Le point de départ de vos projets pour un espoir climatique
+                </span>
+                <span className="is-hidden-tablet">
+                  Au départ de vos projets pour un espoir climatique
+                </span>
+              </Title>
 
-        <SubTitle className="is-hidden-mobile">
-          Donnez vie ou accélérez vos projets grâce à un{' '}
-          <b>accompagnement adapté</b> et une <b>communauté d’experts</b> du
-          numérique.
-        </SubTitle>
+              <SubTitle className="is-hidden-mobile">
+                Donnez vie ou accélérez vos projets grâce à un{' '}
+                <b>accompagnement adapté</b> et une <b>communauté d’experts</b>{' '}
+                du numérique.
+              </SubTitle>
 
-        <div className="columns">
-          <div className="column">
-            <ButtonPrimary href="#section-offer">
-              Notre accompagnement
-            </ButtonPrimary>
+              <div className="columns">
+                <div className="column">
+                  <ButtonPrimary href="#section-offer">
+                    Notre accompagnement
+                  </ButtonPrimary>
+                </div>
+                <div className="column">
+                  <ButtonSecondary href="#section-community" color="#FFFFFF">
+                    &gt; Rejoindre la communauté
+                  </ButtonSecondary>
+                </div>
+                <div className="column" />
+              </div>
+            </div>
           </div>
-          <div className="column">
-            <ButtonSecondary href="#section-community" color="#FFFFFF">
-              &gt; Rejoindre la communauté
-            </ButtonSecondary>
-          </div>
-          <div className="column" />
-        </div>
-      </div>
-    </div>
-  </BackgroundImage>
+        </BackgroundImage>
+      );
+    }}
+  />
 );
 
 export default HeaderSection;
