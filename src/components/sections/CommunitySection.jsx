@@ -12,7 +12,7 @@ const ButtonProjects = styled.div`
   display: inline-block;
   margin-top: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     margin-top: 0;
     margin-left: 20px;
   }

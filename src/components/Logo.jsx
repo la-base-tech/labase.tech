@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import logoImage from '../images/logo.png';
 
 const Container = styled.a`
-  color: #e30e9d;
+  color: ${props => props.theme.color1};
   font-weight: bold;
 
   &:hover {
-    color: #e30e9d !important;
+    color: ${props => props.theme.color1} !important;
   }
 `;
 

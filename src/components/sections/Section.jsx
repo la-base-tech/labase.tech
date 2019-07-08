@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Section = styled.section`
   padding: 30px;
-  background: ${props => (props.even ? '#fbeffc' : 'inherit')};
+  background: ${props => (props.even ? props.theme.color2 : 'inherit')};
 `;
 
 Section.propTypes = {

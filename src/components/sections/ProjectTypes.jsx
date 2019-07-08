@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-wrap: nowrap;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     padding: 5px;
   }
 `;
@@ -24,16 +24,16 @@ const Border = styled.div`
   display: flex;
   flex: 0 0 10px; /* can't grow, can't shrink, fixed at 10px */
   height: 50px;
-  background: #c3b8da;
+  background: ${props => props.theme.color3};
   border-radius: 3px;
   transition: background 0.2s ease;
 
   ${Wrapper}:hover &,
   ${Wrapper}.is-active & {
-    background: #2f1661;
+    background: ${props => props.theme.color4};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     flex: 0 0 15px;
   }
 `;
@@ -46,10 +46,10 @@ const Label = styled.div`
 
   ${Wrapper}:hover &,
   ${Wrapper}.is-active & {
-    color: #2f1661;
+    color: ${props => props.theme.color4};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 14px;
     padding-left: 20px;
   }

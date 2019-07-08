@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ButtonSecondary } from '../Button';
 
 const Container = styled.div`
-  background: #f5f5f5;
+  background: ${props => props.theme.color5};
   border-radius: 7px;
   overflow: hidden;
 `;
@@ -18,7 +18,7 @@ const Title = styled.h3`
   font-size: 16px;
   cursor: default;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 20px;
   }
 `;
@@ -34,7 +34,7 @@ const Type = styled.div`
   margin: 30px 0;
   cursor: default;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 14px;
   }
 `;

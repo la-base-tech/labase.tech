@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ButtonPrimaryStyled = styled.a`
   font-weight: 600;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     text-transform: uppercase;
     padding: 25px 30px;
   }
@@ -44,7 +44,7 @@ const ButtonSecondaryStyled = styled.a`
   :hover {
     color: ${props => props.color || 'white'};
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     padding: 25px 30px;
   }
 `;

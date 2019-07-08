@@ -17,8 +17,8 @@ const SectionSubTitleCustom = styled(SectionSubTitle)`
 
 const OfferColumn = styled.div`
   padding: 30px;
-  background: #fbeffc;
-  color: #2f1661;
+  background: ${props => props.theme.color2};
+  color: ${props => props.theme.color4};
 
   ul {
     margin-bottom: 30px;
@@ -27,12 +27,12 @@ const OfferColumn = styled.div`
 
 const OfferPrice = styled.div`
   display: inline-block;
-  border-top: 5px solid #2f1661;
+  border-top: 5px solid ${props => props.theme.color4};
   padding-top: 30px;
   font-weight: 600;
   font-size: 0.9em;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     padding: 30px 50px 0 0;
     font-size: 1em;
   }
@@ -48,17 +48,17 @@ const SkillsColumn = styled.div`
 
   li {
     padding: 10px 20px;
-    border: 1px solid #2f1661;
+    border: 1px solid ${props => props.theme.color4};
     text-transform: uppercase;
     display: inline-block;
     margin-top: 20px;
     margin-right: 20px;
     font-weight: bold;
     font-size: 0.7em;
-    color: #2f1661;
+    color: ${props => props.theme.color4};
     cursor: default;
 
-    @media (min-width: 768px) {
+    @media (min-width: ${props => props.theme.breakpointTablet}) {
       font-size: 1em;
     }
   }

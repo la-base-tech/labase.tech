@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
 
 import NavBar from '../components/NavBar';
 import HeaderSection from '../components/sections/HeaderSection';
@@ -10,6 +11,8 @@ import ActionsSection from '../components/sections/ActionsSection';
 import OfferSection from '../components/sections/OfferSection';
 import CommunitySection from '../components/sections/CommunitySection';
 import Footer from '../components/Footer';
+
+import theme from '../styles/theme.scss';
 
 export const query = graphql`
   query {
@@ -23,22 +26,24 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => (
-  <>
-    <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-    </Helmet>
+  <ThemeProvider theme={theme}>
+    <>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+        <meta name="description" content={data.site.siteMetadata.description} />
+      </Helmet>
 
-    <NavBar />
+      <NavBar />
 
-    <HeaderSection />
-    <MissionSection />
-    <ActionsSection />
-    <OfferSection />
-    <CommunitySection />
+      <HeaderSection />
+      <MissionSection />
+      <ActionsSection />
+      <OfferSection />
+      <CommunitySection />
 
-    <Footer />
-  </>
+      <Footer />
+    </>
+  </ThemeProvider>
 );
 
 IndexPage.propTypes = {

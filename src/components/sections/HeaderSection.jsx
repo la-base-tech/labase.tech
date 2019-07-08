@@ -10,7 +10,7 @@ const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 40px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${props => props.theme.breakpointDesktop}) {
     font-size: 50px;
     margin-bottom: 30px;
   }
