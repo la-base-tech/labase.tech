@@ -1,18 +1,8 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Logo from './Logo';
 
 const NavBar = () => (
-  <nav
-    className="navbar is-fixed-top"
-    role="navigation"
-    aria-label="main navigation"
-  >
-    <Helmet
-      bodyAttributes={{
-        class: 'has-navbar-fixed-top',
-      }}
-    />
+  <nav className="navbar" role="navigation" aria-label="main navigation">
     <div
       className="navbar-brand"
       style={{
