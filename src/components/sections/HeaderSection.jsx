@@ -7,13 +7,13 @@ import BackgroundImage from '../BackgroundImage';
 const Title = styled.h1`
   color: #fff;
   font-size: 40px;
-  line-height: 60px;
+  line-height: 50px;
   font-weight: bold;
   margin-bottom: 40px;
 
-  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
     font-size: 50px;
-    line-height: 50px;
+    line-height: 55px;
     margin-bottom: 30px;
   }
 `;
