@@ -26,7 +26,7 @@ const Title = styled.h3`
 const Type = styled.div`
   font-size: 13px;
   display: inline-block;
-  background: #2f1661;
+  background: ${props => props.theme.color4};
   padding: 5px 10px;
   color: #fff;
   text-transform: uppercase;
