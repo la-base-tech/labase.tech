@@ -25,6 +25,15 @@ const SubTitle = styled.h2`
   font-weight: 600;
 `;
 
+const ButtonSecondaryStyled = styled(ButtonSecondary)`
+  margin-top: 20px;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+`;
+
 const HeaderSection = () => (
   <StaticQuery
     query={graphql`
@@ -62,19 +71,15 @@ const HeaderSection = () => (
                 du numérique.
               </SubTitle>
 
-              <div className="columns">
-                <div className="column">
-                  <ButtonPrimary href="#section-offer">
-                    Notre accompagnement
-                  </ButtonPrimary>
-                </div>
-                <div className="column">
-                  <ButtonSecondary href="#section-community" color="#FFFFFF">
-                    &gt; Rejoindre la communauté
-                  </ButtonSecondary>
-                </div>
-                <div className="column" />
-              </div>
+              <ButtonPrimary href="#section-offer">
+                Notre accompagnement
+              </ButtonPrimary>
+
+              <br className="is-hidden-tablet" />
+
+              <ButtonSecondaryStyled href="#section-community" color="#FFFFFF">
+                &gt; Rejoindre la communauté
+              </ButtonSecondaryStyled>
             </div>
           </div>
         </BackgroundImage>
