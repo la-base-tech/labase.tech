@@ -10,6 +10,10 @@ const Container = styled.a`
   &:hover {
     color: ${props => props.theme.color1} !important;
   }
+
+  span {
+    margin-top: 4px;
+  }
 `;
 
 const Logo = ({ className }) => {
