@@ -48,14 +48,7 @@ const HeaderSection = () => (
         >
           <div className="hero-body">
             <div className="container">
-              <Title>
-                <span className="is-hidden-mobile">
-                  Le point de départ de vos projets pour un espoir climatique
-                </span>
-                <span className="is-hidden-tablet">
-                  Au départ de vos projets pour un espoir climatique
-                </span>
-              </Title>
+              <Title>Un cortège de solutions pour un espoir climatique</Title>
 
               <SubTitle className="is-hidden-mobile">
                 Donnez vie ou accélérez vos projets grâce à un{' '}
