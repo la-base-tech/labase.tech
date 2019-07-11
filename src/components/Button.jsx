@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ButtonPrimaryStyled = styled.a`
-  font-weight: 600;
+  font-weight: bold;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     text-transform: uppercase;
@@ -40,6 +40,7 @@ const ButtonSecondaryStyled = styled.a`
   color: ${props => props.color || 'white'};
   background-color: transparent;
   border-color: transparent;
+  font-weight: bold;
 
   :hover {
     color: ${props => props.color || 'white'};
