@@ -6,7 +6,7 @@ import SectionTitle from './SectionTitle';
 const ColumnTitle = styled.h2`
   margin-bottom: 30px;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: bold;
 `;
 
 const ActionsSection = () => (
