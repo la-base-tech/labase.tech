@@ -39,7 +39,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {},
+      options: {
+        fileName: false,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
