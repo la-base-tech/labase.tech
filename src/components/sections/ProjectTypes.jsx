@@ -43,6 +43,7 @@ const Label = styled.div`
   font-size: 12px;
   padding-left: 10px;
   font-weight: 600;
+  text-transform: uppercase;
 
   ${Wrapper}:hover &,
   ${Wrapper}.is-active & {
