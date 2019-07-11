@@ -6,12 +6,14 @@ import BackgroundImage from '../BackgroundImage';
 
 const Title = styled.h1`
   color: #fff;
-  font-size: 32px;
+  font-size: 40px;
+  line-height: 60px;
   font-weight: bold;
   margin-bottom: 40px;
 
   @media (min-width: ${props => props.theme.breakpointDesktop}) {
     font-size: 50px;
+    line-height: 50px;
     margin-bottom: 30px;
   }
 `;
@@ -48,7 +50,11 @@ const HeaderSection = () => (
         >
           <div className="hero-body">
             <div className="container">
-              <Title>Un cortège de solutions pour un espoir climatique</Title>
+              <Title>
+                Un cortège de solutions
+                <br />
+                pour un espoir climatique
+              </Title>
 
               <SubTitle className="is-hidden-mobile">
                 Donnez vie ou accélérez vos projets grâce à un{' '}
