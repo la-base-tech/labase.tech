@@ -44,6 +44,8 @@ const ButtonSecondaryStyled = styled.a`
 
   :hover {
     color: ${props => props.color || 'white'};
+    border-color: transparent;
+    text-decoration: underline;
   }
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     padding: 25px 30px;
