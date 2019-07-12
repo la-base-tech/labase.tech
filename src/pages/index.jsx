@@ -12,7 +12,19 @@ import OfferSection from '../components/sections/OfferSection';
 import CommunitySection from '../components/sections/CommunitySection';
 import Footer from '../components/Footer';
 
-import theme from '../styles/theme.scss';
+import themeSass from '../styles/theme.scss';
+
+const theme = {
+  color1: themeSass.color1,
+  color2: themeSass.color2,
+  color3: themeSass.color3,
+  color4: themeSass.color4,
+  color5: themeSass.color5,
+  breakpointTablet: themeSass.breakpointTablet,
+  breakpointDesktop: themeSass.breakpointDesktop,
+  breakpointWidescreen: themeSass.breakpointWidescreen,
+  breakpointFullhd: themeSass.breakpointFullhd,
+};
 
 export const query = graphql`
   query {
