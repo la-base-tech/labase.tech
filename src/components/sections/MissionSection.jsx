@@ -10,10 +10,10 @@ import ccpmImage from '../../images/projects/ca-commence-par-moi.png';
 import coralGuardianImage from '../../images/projects/coral-guardian.png';
 
 const projectTypes = {
-  DECARBONATION: 'Décarbonation',
-  MOBILISATION_CITOYENNE: 'Mobilisation citoyenne',
   TRANSITION_ECOLOGIQUE: 'Transition écologique',
   BIODIVERSITE: 'Biodiversité',
+  MOBILISATION_CITOYENNE: 'Mobilisation citoyenne',
+  DECARBONATION: 'Décarbonation',
 };
 
 const projects = [
