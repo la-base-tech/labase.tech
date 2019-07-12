@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title:
-      'la base tech - le point de départ de vos projets pour un espoir climatique',
+    title: 'la base tech - Un cortège de solutions pour un espoir climatique',
     description:
       'Donnez vie ou accélérez vos projets grâce à un accompagnement adapté et une communauté d’experts du numérique',
     author: 'la base tech',
