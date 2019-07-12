@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from 'nuka-carousel';
 import Section from './Section';
 import SectionTitle from './SectionTitle';
 import SectionSubTitle from './SectionSubTitle';
@@ -50,27 +51,30 @@ const projects = [
   },
 ];
 
-const initialType = Object.keys(projectTypes)[0];
-
-function getProject(key) {
-  return projects.find(({ type }) => type === key);
-}
-
 class MissionSection extends React.Component {
   state = {
-    type: initialType,
-    project: getProject(initialType),
+    projectIndex: 0,
+    type: projects[0].type,
   };
 
   updateType = key => {
+    const projectIndex = projects.findIndex(({ type }) => type === key);
+
     this.setState({
-      type: key,
-      project: getProject(key),
+      projectIndex,
+      type: projects[projectIndex].type,
+    });
+  };
+
+  afterSlideCarousel = slideIndex => {
+    this.setState({
+      projectIndex: slideIndex,
+      type: projects[slideIndex].type,
     });
   };
 
   render() {
-    const { type, project } = this.state;
+    const { type, projectIndex } = this.state;
 
     return (
       <Section id="section-mission">
@@ -107,14 +111,26 @@ class MissionSection extends React.Component {
                 activeType={type}
               />
             </div>
-            <div className="column">
-              <Project
-                type={projectTypes[project.type]}
-                image={project.image}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-              />
+            <div className="column" style={{ overflow: 'hidden' }}>
+              <Carousel
+                withoutControls
+                initialSlideWidth={320}
+                cellSpacing={20}
+                wrapAround
+                afterSlide={this.afterSlideCarousel}
+                slideIndex={projectIndex}
+              >
+                {projects.map(project => (
+                  <Project
+                    key={project.title}
+                    type={projectTypes[project.type]}
+                    image={project.image}
+                    title={project.title}
+                    description={project.description}
+                    link={project.link}
+                  />
+                ))}
+              </Carousel>
             </div>
           </div>
         </div>
