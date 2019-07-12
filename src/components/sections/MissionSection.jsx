@@ -119,6 +119,8 @@ class MissionSection extends React.Component {
                 wrapAround
                 afterSlide={this.afterSlideCarousel}
                 slideIndex={projectIndex}
+                pauseOnHover
+                autoplay
               >
                 {projects.map(project => (
                   <Project
