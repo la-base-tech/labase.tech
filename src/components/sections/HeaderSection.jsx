@@ -47,11 +47,13 @@ const SubCatchline = styled.div`
 `;
 
 const Description = styled.div`
-  margin-top: 50px;
   color: ${props => props.theme.black};
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.78;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 50px;
 
   span {
     font-family: 'CaracasStencilPro', sans-serif;
@@ -80,15 +82,17 @@ const HeaderSection = () => {
             labase<span>.tech</span>
           </Logo>
 
-          <Catchline>La communauté tech engagée pour le climat</Catchline>
+          <Catchline>
+            La&nbsp;communauté&nbsp;tech engagée&nbsp;pour&nbsp;le&nbsp;climat
+          </Catchline>
 
           <Button href="#joinus" onClick={scrollToJoinUs}>
             Nous rejoindre
           </Button>
 
           <SubCatchline>
-            Rassembler les énergies du numérique pour accélérer la transition
-            écologique
+            Rassembler&nbsp;les énergies&nbsp;du&nbsp;numérique
+            pour&nbsp;accélérer la&nbsp;transition&nbsp;écologique
           </SubCatchline>
 
           <Description>
