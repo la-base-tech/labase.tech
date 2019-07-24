@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSlackHash } from '@fortawesome/free-brands-svg-icons';
 import Button from '../Button';
 
 const Title = styled.h2`
@@ -36,7 +38,8 @@ const ActionsSection = () => (
 
       <ButtonWrapper className="has-text-centered">
         <Button href="https://airtable.com/shrbc0nMHLy5DW9eT">
-          Discuter sur slack
+          <FontAwesomeIcon icon={faSlackHash} />
+          &nbsp;&nbsp;Discuter sur slack
         </Button>
       </ButtonWrapper>
     </div>
