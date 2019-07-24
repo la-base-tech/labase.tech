@@ -1,91 +1,105 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { ButtonPrimary, ButtonSecondary } from '../Button';
-import BackgroundImage from '../BackgroundImage';
+import Button from '../Button';
 
-const Title = styled.h1`
-  color: #fff;
-  font-size: 40px;
-  line-height: 50px;
-  font-weight: bold;
-  margin-bottom: 40px;
+const Logo = styled.div`
+  font-family: 'CaracasStencilPro', sans-serif;
+  color: ${props => props.theme.black};
+  cursor: default;
+  font-size: 3.2rem;
+  margin-bottom: 50px;
+
+  span {
+    color: ${props => props.theme.darkRose};
+  }
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
-    font-size: 50px;
-    line-height: 55px;
-    margin-bottom: 30px;
+    font-size: 5rem;
+    margin-bottom: 50px;
   }
 `;
 
-const SubTitle = styled.h2`
-  color: #fff;
-  margin-bottom: 40px;
-  font-size: 25px;
-  font-weight: 600;
-`;
-
-const ButtonSecondaryStyled = styled(ButtonSecondary)`
-  margin-top: 20px;
+const Catchline = styled.div`
+  color: ${props => props.theme.darkRose};
+  line-height: 1;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 50px;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
-    margin-top: 0;
-    margin-left: 20px;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 100px;
   }
 `;
 
-const HeaderSection = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "header-background.png" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const imageData = data.desktop.childImageSharp.fluid;
-      return (
-        <BackgroundImage
-          tag="section"
-          id="section-header"
-          className="hero is-fullheight-with-navbar"
-          backgroundColor="#FFFFFF"
-          imageData={imageData}
-        >
-          <div className="hero-body">
-            <div className="container">
-              <Title>
-                Un cortège de solutions
-                <br />
-                pour un espoir climatique
-              </Title>
+const SubCatchline = styled.div`
+  margin-top: 50px;
+  color: ${props => props.theme.black};
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
 
-              <SubTitle className="is-hidden-mobile">
-                Donnez vie ou accélérez vos projets grâce à un{' '}
-                <b>accompagnement adapté</b> et une <b>communauté d’experts</b>{' '}
-                du numérique.
-              </SubTitle>
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    margin-top: 100px;
+    font-size: 2.2rem;
+  }
+`;
 
-              <ButtonPrimary href="#section-offer">
-                Notre accompagnement
-              </ButtonPrimary>
+const Description = styled.div`
+  margin-top: 50px;
+  color: ${props => props.theme.black};
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.78;
 
-              <br className="is-hidden-tablet" />
+  span {
+    font-family: 'CaracasStencilPro', sans-serif;
+    color: ${props => props.theme.darkRose};
+  }
 
-              <ButtonSecondaryStyled href="#section-community" color="#FFFFFF">
-                &gt; Rejoindre la communauté
-              </ButtonSecondaryStyled>
-            </div>
-          </div>
-        </BackgroundImage>
-      );
-    }}
-  />
-);
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    font-size: 1.2rem;
+  }
+`;
+
+const HeaderSection = () => {
+  function scrollToJoinUs(e) {
+    e.preventDefault();
+    const el = document.querySelector('#joinus');
+    el.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+
+  return (
+    <section className="hero is-fullheight-with-navbar">
+      <div className="hero-body">
+        <div className="container has-text-centered">
+          <Logo>
+            labase<span>.tech</span>
+          </Logo>
+
+          <Catchline>La communauté tech engagée pour le climat</Catchline>
+
+          <Button href="#joinus" onClick={scrollToJoinUs}>
+            Nous rejoindre
+          </Button>
+
+          <SubCatchline>
+            Rassembler les énergies du numérique pour accélérer la transition
+            écologique
+          </SubCatchline>
+
+          <Description>
+            <span>labase.tech</span> fédère les compétences tech et les porteurs
+            de projets au sein d’une communauté qui agit pour la justice sociale
+            et climatique.
+          </Description>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default HeaderSection;

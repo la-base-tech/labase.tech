@@ -1,17 +1,17 @@
 @import './node_modules/bulma/sass/utilities/initial-variables.sass';
 
-$color-1: #e30e9d;
-$color-2: #fbeffc;
-$color-3: #c3b8da;
-$color-4: #2f1661;
-$color-5: #f5f5f5;
+$dark-rose: #c4385a;
+$black: #000000;
+$black-2: #2b2b2b;
+$white: #ffffff;
+$white-2: #fdfdfd;
 
 :export {
-  color-1: $color-1;
-  color-2: $color-2;
-  color-3: $color-3;
-  color-4: $color-4;
-  color-5: $color-5;
+  dark-rose: $dark-rose;
+  black: $black;
+  black-2: $black-2;
+  white: $white;
+  white-2: $white-2;
   breakpoint-tablet: $tablet;
   breakpoint-desktop: $desktop;
   breakpoint-widescreen: $widescreen;
