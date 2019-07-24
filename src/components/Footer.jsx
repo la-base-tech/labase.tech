@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faSlackHash,
+  faGithubSquare,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Wrapper = styled.footer`
   background: #000000;
@@ -23,6 +28,22 @@ const Logo = styled.div`
   }
 `;
 
+const IconLinks = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const IconLink = styled.a`
+  color: ${props => props.theme.white};
+  font-size: 2em;
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    color: ${props => props.theme.darkRose};
+  }
+`;
+
 const Text2 = styled.p`
   font-size: 13px;
 
@@ -38,6 +59,23 @@ const Footer = () => (
       <Logo>
         labase<span>.tech</span>
       </Logo>
+
+      <IconLinks>
+        <IconLink
+          href="https://airtable.com/shrbc0nMHLy5DW9eT"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faSlackHash} />
+        </IconLink>
+        <IconLink
+          href="https://github.com/la-base-tech"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithubSquare} />
+        </IconLink>
+      </IconLinks>
 
       <Text2>
         Avec{' '}
