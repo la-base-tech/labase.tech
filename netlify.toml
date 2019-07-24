@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "https://labase-tech.netlify.com"
+  to = "https://labase.tech"
+  status = 301
+
+[[redirects]]
+  from = "https://labase-tech.netlify.com/*"
+  to = "https://labase.tech/:splat"
+  status = 301
