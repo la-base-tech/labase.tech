@@ -39,6 +39,8 @@ const Action = styled.div`
 
 const ActionContent = styled.div`
   padding: 1rem;
+  align-items: center;
+  display: flex;
 
   @media (min-width: ${props => props.theme.breakpointTablet}) {
     padding: 0.5rem;
@@ -99,38 +101,48 @@ const ActionsSection = () => (
           <div className="column">
             <Action>
               <ActionContent>
-                <ActionCount>1</ActionCount>
-                <ActionLabel>
-                  Soutien aux actions de mobilisations citoyennes
-                </ActionLabel>
+                <div>
+                  <ActionCount>1</ActionCount>
+                  <ActionLabel>
+                    Soutien aux actions de mobilisations citoyennes
+                  </ActionLabel>
+                </div>
               </ActionContent>
             </Action>
           </div>
           <div className="column">
             <Action>
               <ActionContent>
-                <ActionCount>2</ActionCount>
-                <ActionLabel>
-                  Sensibilisation au déréglement climatique
-                </ActionLabel>
+                <div>
+                  <ActionCount>2</ActionCount>
+                  <ActionLabel>
+                    Sensibilisation au déréglement climatique
+                  </ActionLabel>
+                </div>
               </ActionContent>
             </Action>
           </div>
           <div className="column">
             <Action>
               <ActionContent>
-                <ActionCount>3</ActionCount>
-                <ActionLabel>Préservation des écosystèmes naturels</ActionLabel>
+                <div>
+                  <ActionCount>3</ActionCount>
+                  <ActionLabel>
+                    Préservation des écosystèmes naturels
+                  </ActionLabel>
+                </div>
               </ActionContent>
             </Action>
           </div>
           <div className="column">
             <Action>
               <ActionContent>
-                <ActionCount>4</ActionCount>
-                <ActionLabel>
-                  Transition vers une économie décarbonée
-                </ActionLabel>
+                <div>
+                  <ActionCount>4</ActionCount>
+                  <ActionLabel>
+                    Transition vers une économie décarbonée
+                  </ActionLabel>
+                </div>
               </ActionContent>
             </Action>
           </div>
