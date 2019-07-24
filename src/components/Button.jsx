@@ -29,7 +29,7 @@ const Button = ({ className, children, href, onClick }) => {
 
   if (href && href.indexOf('http') === 0) {
     opts.target = '_blank';
-    opts.rel = 'noopener';
+    opts.rel = 'noopener noreferrer';
   }
 
   return <ButtonStyled {...opts}>{children}</ButtonStyled>;
