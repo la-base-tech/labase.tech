@@ -1,45 +1,139 @@
 import React from 'react';
 import styled from 'styled-components';
-import Section from './Section';
-import SectionTitle from './SectionTitle';
 
-const ColumnTitle = styled.h2`
-  margin-bottom: 30px;
-  font-size: 25px;
-  font-weight: bold;
+const Section = styled.section`
+  background-color: ${props => props.theme.darkRose};
+  color: ${props => props.theme.white};
+`;
+
+const Title = styled.h2`
+  font-weight: 600;
+  font-weight: 800;
+  font-size: 2rem;
+`;
+
+const Text = styled.p`
+  margin-top: 3rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+`;
+
+const Action = styled.div`
+  background: ${props => props.theme.white2};
+  width: 250px;
+  height: 250px;
+  margin: auto;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+`;
+
+const ActionContent = styled.div`
+  padding: 1rem;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+    padding: 1rem;
+  }
+`;
+
+const ActionCount = styled.div`
+  font-family: 'CaracasStencilPro', sans-serif;
+  color: ${props => props.theme.darkRose};
+  font-size: 5em;
+  cursor: default;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    font-size: 3.5em;
+  }
+
+  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+    font-size: 5em;
+  }
+`;
+
+const ActionLabel = styled.div`
+  color: ${props => props.theme.black};
+  font-weight: 600;
+  line-height: 2;
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    line-height: 1.1;
+  }
+
+  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+    line-height: 1.5;
+  }
 `;
 
 const ActionsSection = () => (
-  <Section id="section-actions" even>
+  <Section className="section">
     <div className="container">
-      <SectionTitle className="title has-text-centered-mobile">
-        <span className="is-hidden-mobile">Nos actions</span>
-        <span className="is-hidden-tablet">Actions</span>
-      </SectionTitle>
-      <div className="columns has-text-centered-mobile">
-        <div className="column">
-          <ColumnTitle>Accompagnement</ColumnTitle>
+      <Title>Nos actions</Title>
 
-          <p>
-            Nous <b>accompagnons</b> les acteurs engagés pour la transition sur
-            toutes leurs problématiques tech’
-          </p>
-        </div>
-        <div className="column">
-          <ColumnTitle>Communauté</ColumnTitle>
+      <Text>
+        Nous agissons sur le déréglement climatique et l’érosion de la
+        biodiversité grace au numérique en accompagnant et en accélérant les
+        projets qui proposent des solutions sur ces 4 grands champs d’action.
+      </Text>
 
-          <p>
-            Nous <b>fédérons</b> les tech’ qui souhaitent s’engager et leur
-            mettons à disposition des projets concrets
-          </p>
-        </div>
-        <div className="column">
-          <ColumnTitle>Incubation</ColumnTitle>
-
-          <p>
-            Nous <b>faisons</b> émerger des projets qui répondent à la crise
-            climatique
-          </p>
+      <div className="has-text-centered">
+        <div className="columns is-tablet">
+          <div className="column">
+            <Action>
+              <ActionContent>
+                <ActionCount>1</ActionCount>
+                <ActionLabel>
+                  Soutien aux actions de mobilisations citoyennes
+                </ActionLabel>
+              </ActionContent>
+            </Action>
+          </div>
+          <div className="column">
+            <Action>
+              <ActionContent>
+                <ActionCount>2</ActionCount>
+                <ActionLabel>
+                  Sensibilisation au déréglement climatique
+                </ActionLabel>
+              </ActionContent>
+            </Action>
+          </div>
+          <div className="column">
+            <Action>
+              <ActionContent>
+                <ActionCount>3</ActionCount>
+                <ActionLabel>Préservation des écosystèmes naturels</ActionLabel>
+              </ActionContent>
+            </Action>
+          </div>
+          <div className="column">
+            <Action>
+              <ActionContent>
+                <ActionCount>4</ActionCount>
+                <ActionLabel>
+                  Transition vers une économie décarbonée
+                </ActionLabel>
+              </ActionContent>
+            </Action>
+          </div>
         </div>
       </div>
     </div>

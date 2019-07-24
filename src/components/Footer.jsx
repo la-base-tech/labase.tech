@@ -1,22 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from './Logo';
 
 const Wrapper = styled.footer`
   background: #000000;
-  padding: 30px;
+  padding: 1rem;
   color: #ffffff;
 `;
 
-const Text1 = styled.p`
-  margin-bottom: 30px;
-  font-size: 1em;
-  line-height: 1em;
-  font-weight: bold;
+const Logo = styled.div`
+  font-family: 'CaracasStencilPro', sans-serif;
+  color: ${props => props.theme.white};
+  cursor: default;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 
-  img {
-    height: 1rem;
-    vertical-align: text-top;
+  span {
+    color: ${props => props.theme.darkRose};
+  }
+
+  @media (min-width: ${props => props.theme.breakpointTablet}) {
+    font-size: 2rem;
   }
 `;
 
@@ -32,12 +35,12 @@ const Text2 = styled.p`
 const Footer = () => (
   <Wrapper className="footer">
     <div className="content has-text-centered">
-      <Text1>
-        <Logo fontSize="1" /> est le point de départ de vos projets pour un
-        espoir climatique
-      </Text1>
+      <Logo>
+        labase<span>.tech</span>
+      </Logo>
+
       <Text2>
-        Sous le haut patronage de{' '}
+        Avec{' '}
         <a
           href="https://labase.paris"
           target="_blank"

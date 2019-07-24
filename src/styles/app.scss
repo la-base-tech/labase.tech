@@ -3,6 +3,11 @@
 @import './variables.scss';
 @import '~bulma/bulma.sass';
 
+@font-face {
+  font-family: 'CaracasStencilPro';
+  src: url('/fonts/CaracasStencilPro-DemiBlack.otf');
+}
+
 // Adjust navbar size for wide screens
 @media (min-width: 768px) {
   body.has-navbar-fixed-top {

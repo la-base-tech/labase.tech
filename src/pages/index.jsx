@@ -6,25 +6,11 @@ import { ThemeProvider } from 'styled-components';
 
 import NavBar from '../components/NavBar';
 import HeaderSection from '../components/sections/HeaderSection';
-import MissionSection from '../components/sections/MissionSection';
 import ActionsSection from '../components/sections/ActionsSection';
-import OfferSection from '../components/sections/OfferSection';
-import CommunitySection from '../components/sections/CommunitySection';
+import JoinUsSection from '../components/sections/JoinUsSection';
 import Footer from '../components/Footer';
 
-// TODO: fix sass export variables on build
-// import theme from '../styles/theme.scss';
-const theme = {
-  color1: '#e30e9d',
-  color2: '#fbeffc',
-  color3: '#c3b8da',
-  color4: '#2f1661',
-  color5: '#f5f5f5',
-  breakpointTablet: '769px',
-  breakpointDesktop: '1024px',
-  breakpointWidescreen: '1216px',
-  breakpointFullhd: '1408px',
-};
+import theme from '../utils/theme';
 
 export const query = graphql`
   query {
@@ -48,10 +34,8 @@ const IndexPage = ({ data }) => (
       <NavBar />
 
       <HeaderSection />
-      <MissionSection />
       <ActionsSection />
-      <OfferSection />
-      <CommunitySection />
+      <JoinUsSection />
 
       <Footer />
     </>

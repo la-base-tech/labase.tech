@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'la base tech - Un cortège de solutions pour un espoir climatique',
+    title: 'la base tech - la communauté tech engagée pour le climat',
     description:
-      'Donnez vie ou accélérez vos projets grâce à un accompagnement adapté et une communauté d’experts du numérique',
+      'Rassembler les énergies du numérique pour accélérer la transition écologique',
     author: 'la base tech',
   },
   plugins: [
@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Montserrat:400,600,700'],
+        fonts: ['Montserrat:400,600,700,800'],
         display: 'swap',
       },
     },
