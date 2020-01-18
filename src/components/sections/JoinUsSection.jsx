@@ -37,7 +37,7 @@ const ActionsSection = () => (
       </Text>
 
       <ButtonWrapper className="has-text-centered">
-        <Button href="https://airtable.com/shrbc0nMHLy5DW9eT">
+        <Button href="https://slackin-extended-fm0ls1xai.now.sh/">
           <FontAwesomeIcon icon={faSlackHash} />
           &nbsp;&nbsp;Discuter sur slack
         </Button>
