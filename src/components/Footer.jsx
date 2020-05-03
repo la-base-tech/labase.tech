@@ -62,6 +62,7 @@ const Footer = () => (
 
       <IconLinks>
         <IconLink
+          title="Retrouvez-nous sur Slack"
           href="https://slackin.labase.tech"
           target="_blank"
           rel="noopener noreferrer"
@@ -69,6 +70,7 @@ const Footer = () => (
           <FontAwesomeIcon icon={faSlackHash} />
         </IconLink>
         <IconLink
+          title="Retrouvez-nous sur Github"
           href="https://github.com/la-base-tech"
           target="_blank"
           rel="noopener noreferrer"
