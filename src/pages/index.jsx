@@ -29,7 +29,6 @@ const IndexPage = ({ data }) => (
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
         <meta name="description" content={data.site.siteMetadata.description} />
-        <script src="https://assets.digitalclimatestrike.net/widget.js" async />
       </Helmet>
 
       <NavBar />
