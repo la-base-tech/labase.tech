@@ -11,28 +11,33 @@ const ButtonStyled = styled.a`
 
   &:hover {
     background-color: transparent !important;
-    color: ${props => props.theme.darkRose} !important;
-    border: 2px solid ${props => props.theme.darkRose} !important;
+    color: ${(props) => props.theme.darkRose} !important;
+    border: 2px solid ${(props) => props.theme.darkRose} !important;
   }
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     padding: 30px 60px;
   }
 `;
 
 const Button = ({ className, children, href, onClick }) => {
-  const opts = {
-    className: `${className} button is-primary`,
-    href,
-    onClick,
-  };
-
+  let target;
+  let rel;
   if (href && href.indexOf('http') === 0) {
-    opts.target = '_blank';
-    opts.rel = 'noopener noreferrer';
+    target = '_blank';
+    rel = 'noopener noreferrer';
   }
-
-  return <ButtonStyled {...opts}>{children}</ButtonStyled>;
+  return (
+    <ButtonStyled
+      className={`${className} button is-primary`}
+      href={href}
+      onClick={onClick}
+      target={target}
+      rel={rel}
+    >
+      {children}
+    </ButtonStyled>
+  );
 };
 
 Button.propTypes = {

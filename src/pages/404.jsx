@@ -9,16 +9,16 @@ import theme from '../utils/theme';
 
 const Page404 = styled.div`
   font-family: 'CaracasStencilPro', sans-serif;
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   cursor: default;
   font-size: 3.2rem;
   margin-bottom: 50px;
 
   span {
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 5rem;
     margin-bottom: 50px;
   }

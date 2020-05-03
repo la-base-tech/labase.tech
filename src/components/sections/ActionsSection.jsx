@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  background-color: ${props => props.theme.darkRose};
-  color: ${props => props.theme.white};
+  background-color: ${(props) => props.theme.darkRose};
+  color: ${(props) => props.theme.white};
 `;
 
 const Title = styled.h2`
@@ -19,12 +19,12 @@ const Text = styled.p`
 `;
 
 const Action = styled.div`
-  background: ${props => props.theme.white2};
+  background: ${(props) => props.theme.white2};
   width: 250px;
   height: 250px;
   margin: auto;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     position: relative;
     width: 100%;
     height: auto;
@@ -42,7 +42,7 @@ const ActionContent = styled.div`
   align-items: center;
   display: flex;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     padding: 0.5rem;
     position: absolute;
     top: 0;
@@ -51,36 +51,36 @@ const ActionContent = styled.div`
     height: 100%;
   }
 
-  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+  @media (min-width: ${(props) => props.theme.breakpointDesktop}) {
     padding: 1rem;
   }
 `;
 
 const ActionCount = styled.div`
   font-family: 'CaracasStencilPro', sans-serif;
-  color: ${props => props.theme.darkRose};
+  color: ${(props) => props.theme.darkRose};
   font-size: 5em;
   cursor: default;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 3.5em;
   }
 
-  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+  @media (min-width: ${(props) => props.theme.breakpointDesktop}) {
     font-size: 5em;
   }
 `;
 
 const ActionLabel = styled.div`
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   font-weight: 600;
   line-height: 2;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     line-height: 1.1;
   }
 
-  @media (min-width: ${props => props.theme.breakpointDesktop}) {
+  @media (min-width: ${(props) => props.theme.breakpointDesktop}) {
     line-height: 1.5;
   }
 `;

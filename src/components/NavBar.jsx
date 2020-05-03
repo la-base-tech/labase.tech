@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const Logo = styled.span`
   font-family: 'CaracasStencilPro', sans-serif;
-  color: ${props => props.theme.white};
+  color: ${(props) => props.theme.white};
   cursor: default;
   padding: 0.5rem 0.75rem;
 
   span {
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 `;
 

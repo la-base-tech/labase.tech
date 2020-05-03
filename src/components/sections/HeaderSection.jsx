@@ -4,29 +4,29 @@ import Button from '../Button';
 
 const Logo = styled.div`
   font-family: 'CaracasStencilPro', sans-serif;
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   cursor: default;
   font-size: 3.2rem;
   margin-bottom: 50px;
 
   span {
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 5rem;
     margin-bottom: 50px;
   }
 `;
 
 const Catchline = styled.div`
-  color: ${props => props.theme.darkRose};
+  color: ${(props) => props.theme.darkRose};
   line-height: 1;
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 50px;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 100px;
@@ -35,19 +35,19 @@ const Catchline = styled.div`
 
 const SubCatchline = styled.div`
   margin-top: 50px;
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     margin-top: 100px;
     font-size: 2.2rem;
   }
 `;
 
 const Description = styled.div`
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.78;
@@ -57,10 +57,10 @@ const Description = styled.div`
 
   span {
     font-family: 'CaracasStencilPro', sans-serif;
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 1.2rem;
   }
 `;

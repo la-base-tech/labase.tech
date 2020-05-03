@@ -14,16 +14,16 @@ const Wrapper = styled.footer`
 
 const Logo = styled.div`
   font-family: 'CaracasStencilPro', sans-serif;
-  color: ${props => props.theme.white};
+  color: ${(props) => props.theme.white};
   cursor: default;
   font-size: 2rem;
   margin-bottom: 1rem;
 
   span {
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 
-  @media (min-width: ${props => props.theme.breakpointTablet}) {
+  @media (min-width: ${(props) => props.theme.breakpointTablet}) {
     font-size: 2rem;
   }
 `;
@@ -33,14 +33,14 @@ const IconLinks = styled.div`
 `;
 
 const IconLink = styled.a`
-  color: ${props => props.theme.white};
+  color: ${(props) => props.theme.white};
   font-size: 2em;
   &:not(:last-child) {
     margin-right: 1rem;
   }
 
   &:hover {
-    color: ${props => props.theme.darkRose};
+    color: ${(props) => props.theme.darkRose};
   }
 `;
 

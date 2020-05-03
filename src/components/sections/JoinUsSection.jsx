@@ -13,7 +13,7 @@ const Text = styled.p`
   margin-top: 3rem;
 
   a {
-    color: ${props => props.theme.black};
+    color: ${(props) => props.theme.black};
     font-weight: 700;
   }
 `;
