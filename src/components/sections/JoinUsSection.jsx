@@ -37,7 +37,7 @@ const ActionsSection = () => (
       </Text>
 
       <ButtonWrapper className="has-text-centered">
-        <Button href="https://slackin-extended-fm0ls1xai.now.sh/">
+        <Button href="https://slackin.labase.tech">
           <FontAwesomeIcon icon={faSlackHash} />
           &nbsp;&nbsp;Discuter sur slack
         </Button>

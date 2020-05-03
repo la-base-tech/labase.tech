@@ -62,7 +62,7 @@ const Footer = () => (
 
       <IconLinks>
         <IconLink
-          href="https://airtable.com/shrbc0nMHLy5DW9eT"
+          href="https://slackin.labase.tech"
           target="_blank"
           rel="noopener noreferrer"
         >
