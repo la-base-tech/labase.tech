@@ -31,9 +31,7 @@ const ActionsSection = () => (
         Tu souhaites t&apos;engager ? Tu portes un projet et tu veux être
         accompagné par la base tech ? Rejoins-nous sur le Slack pour échanger
         avec la communauté. Tu peux aussi nous écrire à{' '}
-        <a href="mailto:hello@labase.tech">hello@labase.tech</a> ou
-        t&apos;inscrire à notre newsletter pour suivre nos actualités,
-        évènements et prochaines actions.
+        <a href="mailto:hello@labase.tech">hello@labase.tech</a> !
       </Text>
 
       <ButtonWrapper className="has-text-centered">
